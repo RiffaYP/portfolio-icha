@@ -498,15 +498,25 @@ body.nav-open .menu-toggle span:last-child {
   display: block;
 }
 
-.hero-name--alt {
+.hero-name--small {
+  display: block;
+  font-size: 0.52em;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  color: var(--muted);
+  margin-bottom: 0.08em;
+  text-transform: uppercase;
+}
+
+.hero-name--main {
   display: flex;
   align-items: flex-start;
   gap: 0.03em;
   margin-top: 0.08em;
-  color: var(--coffee);
+  color: var(--ink);
 }
 
-.hero-name--alt em {
+.hero-name--main em {
   font-family: var(--font-serif);
   font-size: 1.06em;
   font-style: italic;
