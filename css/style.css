@@ -152,8 +152,13 @@ ol {
 }
 
 :focus-visible {
-  outline: 2px solid var(--orange-deep);
+  outline: 3px solid var(--orange-deep);
   outline-offset: 4px;
+}
+
+.work-filter:focus-visible,
+.menu-toggle:focus-visible {
+  outline-color: var(--coffee);
 }
 
 .skip-link {
@@ -1149,15 +1154,23 @@ body.nav-open .menu-toggle span:last-child {
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-bottom: 28px;
+  margin-bottom: 8px;
+}
+
+.work-filter-status {
+  min-height: 1.4em;
+  margin-bottom: 20px;
+  color: var(--muted);
+  font-size: 0.78rem;
 }
 
 .work-filter {
+  min-height: 44px;
   padding: 8px 14px;
   border: 1px solid var(--line);
   border-radius: 999px;
   background: transparent;
-  color: var(--muted);
+  color: var(--coffee);
   cursor: pointer;
   font-size: 0.82rem;
   transition: color 0.2s ease, background 0.2s ease, border-color 0.2s ease;
@@ -3090,6 +3103,12 @@ body.nav-open .menu-toggle span:last-child {
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
+  }
+
+  .js [data-reveal] {
+    opacity: 1;
+    transform: none;
+    transition: none;
   }
 
   *,
