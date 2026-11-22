@@ -41,6 +41,30 @@ const projects = {
     images: [
       { src: "assets/images/work-behind.webp", alt: "Potret Dedek Icha di balik proses kreatif" }
     ]
+  },
+  "cat-illustration": {
+    title: "Little Cat",
+    category: "Digital Illustration · Character",
+    desc: "Ilustrasi karakter anak kucing dengan pendekatan warna lembut dan detail ekspresif.",
+    images: [
+      { src: "assets/images/image%20(1).png", alt: "Ilustrasi digital anak kucing berbulu belang" }
+    ]
+  },
+  "portrait-illustration": {
+    title: "Warm Portrait",
+    category: "Digital Illustration · Portrait",
+    desc: "Studi potret digital dengan palet warna hangat, pencahayaan dramatis, dan karakter yang ekspresif.",
+    images: [
+      { src: "assets/images/image%20(3).png", alt: "Ilustrasi potret karakter dengan kacamata dan pencahayaan hangat" }
+    ]
+  },
+  "self-portrait": {
+    title: "Floral Character",
+    category: "Digital Illustration · Character",
+    desc: "Desain karakter potret dengan aksesori bunga dan perhatian pada detail busana serta ekspresi.",
+    images: [
+      { src: "assets/images/image%20(4).png", alt: "Ilustrasi digital potret perempuan berkacamata dengan hiasan bunga" }
+    ]
   }
 };
 

@@ -693,6 +693,10 @@ body.nav-open .menu-toggle span:last-child {
   filter: saturate(0.95) contrast(1.03);
 }
 
+.portrait-media img[src$="image.png"] {
+  object-position: center 44%;
+}
+
 .portrait-caption {
   display: flex;
   align-items: center;
