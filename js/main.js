@@ -105,6 +105,7 @@ function setMenu(open, restoreFocus = false) {
   body.classList.toggle("nav-open", open);
   menuToggle.setAttribute("aria-expanded", String(open));
   menuToggle.setAttribute("aria-label", open ? "Tutup menu" : "Buka menu");
+  if (primaryNav && window.innerWidth <= 960) primaryNav.inert = !open;
 
   if (open) {
     const firstLink = primaryNav ? primaryNav.querySelector("a") : null;
@@ -136,9 +137,14 @@ if (menuToggle && primaryNav) {
     }
   });
 
+  primaryNav.inert = window.innerWidth <= 960;
+
   window.addEventListener("resize", () => {
-    if (window.innerWidth > 960 && body.classList.contains("nav-open")) {
-      setMenu(false);
+    if (window.innerWidth > 960) {
+      primaryNav.inert = false;
+      if (body.classList.contains("nav-open")) setMenu(false);
+    } else {
+      primaryNav.inert = !body.classList.contains("nav-open");
     }
   });
 }
@@ -312,9 +318,13 @@ document.querySelectorAll(".work-filter").forEach((button) => {
       filter.classList.toggle("is-active", selected);
       filter.setAttribute("aria-pressed", String(selected));
     });
+    let visibleCount = 0;
     workCards.forEach((card) => {
       card.hidden = category !== "all" && !card.dataset.category.split(" ").includes(category);
+      if (!card.hidden) visibleCount += 1;
     });
+    const status = document.getElementById("work-filter-status");
+    if (status) status.textContent = `${visibleCount} karya ditampilkan`;
   });
 });
 
