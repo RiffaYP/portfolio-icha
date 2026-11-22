@@ -278,7 +278,23 @@ function stepLightbox(direction) {
   renderLightbox();
 }
 
-document.querySelectorAll(".work-card").forEach((card) => {
+const workCards = Array.from(document.querySelectorAll(".work-card"));
+
+document.querySelectorAll(".work-filter").forEach((button) => {
+  button.addEventListener("click", () => {
+    const category = button.dataset.filter;
+    document.querySelectorAll(".work-filter").forEach((filter) => {
+      const selected = filter === button;
+      filter.classList.toggle("is-active", selected);
+      filter.setAttribute("aria-pressed", String(selected));
+    });
+    workCards.forEach((card) => {
+      card.hidden = category !== "all" && !card.dataset.category.split(" ").includes(category);
+    });
+  });
+});
+
+workCards.forEach((card) => {
   const trigger = card.querySelector(".work-hit");
   if (!trigger) return;
   trigger.addEventListener("click", () => openProject(card.dataset.project));

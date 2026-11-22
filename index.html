@@ -12,9 +12,6 @@
   <meta property="og:locale" content="id_ID">
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preload" as="image" href="assets/images/portrait.webp" fetchpriority="high">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,500;12..96,600;12..96,700;12..96,800&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <script>document.documentElement.classList.add('js');</script>
   <script type="application/ld+json">
@@ -106,9 +103,6 @@
             </a>
             <a class="social-link" href="mailto:dedekicha260@gmail.com" aria-label="Kirim email ke Icha">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="m4 7 8 6 8-6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            </a>
-            <a class="social-link" href="https://wa.me/6285866284952" target="_blank" rel="noopener" aria-label="WhatsApp Icha">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M20.5 11.6a8.4 8.4 0 0 1-12.4 7.4L3.5 20.5l1.5-4.5a8.4 8.4 0 1 1 15.5-4.4Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.2 8.4c.2-.4.4-.4.7-.4h.5c.2 0 .4 0 .6.5l.7 1.6c.1.2 0 .4-.1.6l-.5.6c-.1.2-.2.3 0 .5.6 1 1.4 1.7 2.4 2.2.2.1.4.1.5 0l.6-.7c.2-.2.4-.2.6-.1l1.5.7c.4.2.5.3.5.5 0 .2-.2 1.2-.7 1.5-.4.3-.9.5-1.6.4-1.5-.2-3.3-1.2-4.8-2.7-1.2-1.2-2-2.6-2.2-3.7-.1-.6.1-1.1.4-1.5Z" fill="currentColor"/></svg>
             </a>
             <a class="social-link" href="https://canva.link/b213hwkz8s18kp8" target="_blank" rel="noopener" aria-label="Portofolio Canva Icha">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M14 4h6v6M20 4l-9 9" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><path d="M19 14v5a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
@@ -244,8 +238,15 @@
           </div>
         </div>
 
+        <div class="work-filters" role="group" aria-label="Filter kategori karya">
+          <button class="work-filter is-active" type="button" data-filter="all" aria-pressed="true">Semua</button>
+          <button class="work-filter" type="button" data-filter="illustration" aria-pressed="false">Ilustrasi</button>
+          <button class="work-filter" type="button" data-filter="mascot" aria-pressed="false">Maskot</button>
+          <button class="work-filter" type="button" data-filter="apparel" aria-pressed="false">Apparel</button>
+          <button class="work-filter" type="button" data-filter="process" aria-pressed="false">Proses</button>
+        </div>
         <div class="works-grid">
-          <article class="work-card work-card--tall" data-project="ce2025" data-reveal>
+          <article class="work-card work-card--tall" data-category="illustration mascot" data-project="ce2025" data-reveal>
             <div class="work-media">
               <img src="assets/images/work-ce2025-1.webp" alt="Ilustrasi karakter dan maskot Chemistry Expo 2025" width="717" height="896" loading="lazy">
               <span class="work-view">Lihat Proyek <span aria-hidden="true">→</span></span>
@@ -264,7 +265,7 @@
             <button class="work-hit" type="button" aria-label="Buka proyek Chemistry Expo 2025"></button>
           </article>
 
-          <article class="work-card work-card--tall" data-project="ce2026" data-reveal style="--reveal-delay:.1s">
+          <article class="work-card work-card--tall" data-category="illustration mascot" data-project="ce2026" data-reveal style="--reveal-delay:.1s">
             <div class="work-media">
               <img src="assets/images/work-ce2026-1.webp" alt="Ilustrasi maskot rubah Chemistry Expo 2026" width="768" height="1024" loading="lazy">
               <span class="work-view">Lihat Proyek <span aria-hidden="true">→</span></span>
@@ -283,7 +284,7 @@
             <button class="work-hit" type="button" aria-label="Buka proyek Chemistry Expo 2026"></button>
           </article>
 
-          <article class="work-card work-card--wide" data-project="apparel" data-reveal>
+          <article class="work-card work-card--wide" data-category="apparel" data-project="apparel" data-reveal>
             <div class="work-media">
               <img src="assets/images/work-apparel.webp" alt="Ilustrasi merchandise dan apparel mahasiswa Kimia Unila" width="1280" height="673" loading="lazy">
               <span class="work-view">Lihat Proyek <span aria-hidden="true">→</span></span>
@@ -302,7 +303,7 @@
             <button class="work-hit" type="button" aria-label="Buka proyek Apparel & Merchandise"></button>
           </article>
 
-          <article class="work-card work-card--wide work-card--split" data-project="art" data-reveal style="--reveal-delay:.1s">
+          <article class="work-card work-card--wide work-card--split" data-category="illustration" data-project="art" data-reveal style="--reveal-delay:.1s">
             <div class="work-media">
               <div class="split-media">
                 <img src="assets/images/work-art-1.webp" alt="Sketsa manual tinta karya Icha" width="692" height="922" loading="lazy">
@@ -324,7 +325,7 @@
             <button class="work-hit" type="button" aria-label="Buka proyek Digital & Manual Illustration"></button>
           </article>
 
-          <article class="work-card work-card--wide work-card--behind" data-project="behind" data-reveal>
+          <article class="work-card work-card--wide work-card--behind" data-category="process" data-project="behind" data-reveal>
             <div class="behind-card">
               <figure class="behind-media">
                 <img src="assets/images/work-behind.webp" alt="Potret Icha di balik proses kreatif" width="640" height="1138" loading="lazy">
@@ -674,11 +675,7 @@
               <span class="contact-value">dedekicha260@gmail.com</span>
               <span class="contact-icon" aria-hidden="true">→</span>
             </a>
-            <a class="contact-row" href="https://wa.me/6285866284952" target="_blank" rel="noopener">
-              <span class="contact-label">WhatsApp</span>
-              <span class="contact-value">********</span>
-              <span class="contact-icon" aria-hidden="true">→</span>
-            </a>
+
             <a class="contact-row" href="https://instagram.com/iichatir" target="_blank" rel="noopener">
               <span class="contact-label">Instagram</span>
               <span class="contact-value">@iichatir</span>
